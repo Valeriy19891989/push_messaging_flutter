@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const Text('Start services'),
                 ),
                 const SizedBox(height: 8,),
+                state.fcmToken == null ? const SizedBox.shrink() :
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -59,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           Expanded(
                             child: Text(
-                              _bloc.state.fcmToken.toString(),
+                              state.fcmToken.toString(),
                               maxLines: 7,
                               overflow: TextOverflow.ellipsis,
                             ),
